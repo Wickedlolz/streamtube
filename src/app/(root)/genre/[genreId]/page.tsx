@@ -1,13 +1,16 @@
 import { Metadata } from 'next';
 import GenreMoviesWithInfinityScroll from '@/components/GenreMoviesWithInfinityScroll';
 
+type Params = Promise<{ genreId: string }>;
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
 export async function generateMetadata({
     searchParams,
 }: {
-    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+    searchParams: SearchParams;
 }): Promise<Metadata> {
-    const params = await searchParams;
-    const title = await params['genre'];
+    const searchQuery = await searchParams;
+    const title = searchQuery['genre'];
 
     return {
         title: `${title} | StreamTube`,
@@ -18,11 +21,11 @@ export default async function GenrePage({
     params,
     searchParams,
 }: {
-    params: Promise<{ genreId: string }>;
-    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+    params: Params;
+    searchParams: SearchParams;
 }) {
     const { genreId } = await params;
-    const genre = (await searchParams)['genre'] as string;
+    const genre = (await searchParams)['genre'];
 
     return (
         <section className="py-10 max-w-screen-xl mx-auto">
@@ -38,7 +41,7 @@ export default async function GenrePage({
             </div>
             <div className="relative">
                 <GenreMoviesWithInfinityScroll
-                    genre={genre}
+                    genre={genre as string}
                     genreId={genreId}
                 />
             </div>
