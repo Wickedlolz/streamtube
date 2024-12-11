@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: white;
+  color: black;
+}
+
+html.dark body {
+  background-color: black;
+  color: white;
+}
+
+@layer base {
+  .carousel-btn-left {
+    @apply absolute left-3 lg:left-6 top-[50%] z-20 bg-gray-800 hover:bg-gray-600 hover:scale-110 transition duration-150 ease-in-out text-center text-white p-2 w-10 h-10 rounded-full flex items-center justify-center;
+  }
+  .carousel-btn-right {
+    @apply absolute right-3 lg:right-6 top-[50%] z-20 bg-gray-800 hover:bg-gray-600 hover:scale-110 transition duration-150 ease-in-out text-white p-2 w-10 h-10 rounded-full flex items-center justify-center;
+  }
+}
+
+@layer utilities {
+  .bg-gradient {
+    @apply bg-gradient-to-r from-gradient-red-1 via-gradient-red-2 via-gradient-red-3 via-gradient-red-4 to-gradient-red-5;
+  }
+}
