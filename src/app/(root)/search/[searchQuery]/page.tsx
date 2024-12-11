@@ -3,6 +3,8 @@ import SearchMoviesWithInfinityScroll from '@/components/SearchMoviesWithInfinit
 
 type Params = Promise<{ searchQuery: string }>;
 
+export const runtime = 'edge';
+
 export async function generateMetadata({
     params,
 }: {

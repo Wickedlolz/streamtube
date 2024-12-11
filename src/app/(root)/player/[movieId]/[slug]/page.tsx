@@ -6,6 +6,8 @@ import PlayerBackButton from '@/components/PlayerBackButton';
 
 type Params = Promise<{ movieId: string; slug: string }>;
 
+export const runtime = 'edge';
+
 export async function generateMetadata({
     params,
 }: {

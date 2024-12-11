@@ -4,6 +4,8 @@ import GenreMoviesWithInfinityScroll from '@/components/GenreMoviesWithInfinityS
 type Params = Promise<{ genreId: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
+export const runtime = 'edge';
+
 export async function generateMetadata({
     searchParams,
 }: {

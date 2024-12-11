@@ -4,6 +4,8 @@ import MovieContainer from '@/components/MovieContainer';
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
+export const runtime = 'edge';
+
 export async function generateMetadata({
     searchParams,
 }: {
