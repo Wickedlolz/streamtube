@@ -34,7 +34,7 @@ To get a local copy up and running, follow these steps:
 1. **Clone the repository:**
 
 ```
-git clone https://github.com/wickedlolz/streamtube.git
+git clone https://github.com/Wickedlolz/streamtube
 ```
 
 ```
