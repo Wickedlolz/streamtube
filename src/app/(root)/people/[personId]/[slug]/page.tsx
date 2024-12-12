@@ -7,8 +7,6 @@ import PersonDetailsTabs from '@/components/PersonDetailsTabs';
 
 type Params = Promise<{ personId: string; slug: string }>;
 
-export const runtime = 'edge';
-
 export async function generateMetadata({
     params,
 }: {

@@ -14,8 +14,6 @@ import MovieOverview from '@/components/MovieOverview';
 
 type Params = Promise<{ movieId: string; slug: string }>;
 
-export const runtime = 'edge';
-
 export async function generateMetadata({
     params,
 }: {

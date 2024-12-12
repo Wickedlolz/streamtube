@@ -5,8 +5,6 @@ import MovieGrid from '@/components/MovieGrid';
 type Params = Promise<{ networkId: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
-export const runtime = 'edge';
-
 export async function generateMetadata({
     searchParams,
 }: {
