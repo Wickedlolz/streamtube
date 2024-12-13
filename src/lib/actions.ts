@@ -169,13 +169,16 @@ type IResponseData = {
 };
 
 export const sendEmail = async (emailDto: SendEmailDto) => {
-    const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(emailDto),
-    });
+    const response = await fetch(
+        'https://moviestreamtube.vercel.app/api/send-email',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(emailDto),
+        }
+    );
 
     if (!response.ok) {
         try {
