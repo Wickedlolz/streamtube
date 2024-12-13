@@ -11,7 +11,7 @@ Welcome to **StreamTube**, the ultimate platform for all your movie-watching nee
 -   **Search Functionality**: Easily find movies by title or search by genre to discover new films that match your interests.
 -   **Theme Customization**: Switch between themes to personalize the look and feel of your **StreamTube**.
 -   **Responsive Design**: Enjoy a seamless viewing experience on any device, whether it's a phone, tablet, or laptop.
--   **NEW Contact Us Email Integration**: Users can send messages to the site owner directly from the contact page. The form collects the user's name, email, and message. Server-side, an Express.js API handles the email sending using Nodemailer, ensuring reliable and secure message delivery to the owner’s inbox. This feature facilitates easy communication between users and the site owner.
+-   **NEW Email-Sending API in Next.js**: Users can send messages to the site owner directly from the contact page. The form collects the user's name, email, and message. Server-side, an NextJS API handles the email sending using Nodemailer, ensuring reliable and secure message delivery to the owner’s inbox. This feature facilitates easy communication between users and the site owner.
 
 # 🛠️ Technology Stack
 
@@ -24,8 +24,6 @@ Welcome to **StreamTube**, the ultimate platform for all your movie-watching nee
 -   **Icons & UI Components**: Lucide-react, custom components and [shadcn](https://ui.shadcn.com)
 
 # 🎨 Screenshots
-
-
 
 # 🔧 Installation & Setup
 
