@@ -169,16 +169,22 @@ type IResponseData = {
 };
 
 export const sendEmail = async (emailDto: SendEmailDto) => {
-    const response = await fetch(
-        'https://moviestreamtube.netlify.app/api/send-email',
-        {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(emailDto),
+    const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailDto),
+    });
+
+    if (!response.ok) {
+        try {
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'Failed to send email');
+        } catch {
+            throw new Error('Unexpected response from server');
         }
-    );
+    }
 
     const data = (await response.json()) as IResponseData;
 
