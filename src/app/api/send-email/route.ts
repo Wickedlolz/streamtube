@@ -13,7 +13,6 @@ export async function POST(request: Request) {
     try {
         const data = await request.json();
         const { name, email, message } = data;
-        console.log(`name: ${name}, email: ${email}, message: ${message}`);
 
         if (!name || !email || !message) {
             return NextResponse.json(
