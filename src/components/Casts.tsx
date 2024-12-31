@@ -8,7 +8,7 @@ type CastsProps = {
 };
 
 const Casts = ({ casts }: CastsProps) => {
-    const topCasts = casts.slice(0, 5);
+    const topCasts = casts.slice(0, 6);
 
     if (topCasts.length === 0) return null;
 
