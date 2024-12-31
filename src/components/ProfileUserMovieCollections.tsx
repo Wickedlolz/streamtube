@@ -4,8 +4,9 @@ import { useFirebaseContext } from '@/contexts/FirebaseContext';
 import { useQuery } from '@tanstack/react-query';
 import { getUserCollections } from '@/lib/actions';
 
-import MovieCard from './MovieCard';
 import Spinner from './Spinner';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
+import ProfileMovieCollection from './ProfileMovieCollection';
 
 const ProfileUserMovieCollections = () => {
     const { user } = useFirebaseContext();
@@ -20,33 +21,24 @@ const ProfileUserMovieCollections = () => {
     }
 
     return (
-        <section className="flex flex-col space-y-2">
-            <div className="mx-10 py-2 flex items-center justify-between border-b border-b-gray-500 relative mb-4">
-                <h2 className="text-sm uppercase font-bold tracking-wider dark:text-white">
-                    Liked Movies
-                </h2>
-
-                <span className="w-16 h-1 bg-red-600 inline-block absolute left-0 -bottom-[1.5px] z-10" />
-            </div>
-            <div className="flex space-x-4 overflow-scroll px-5 lg:px-10 py-5 scrollbar-hide">
-                {data?.likedMovies.map((movie) => (
-                    <MovieCard key={movie?.id} movie={movie} />
-                ))}
-            </div>
-
-            <div className="mx-10 py-2 flex items-center justify-between border-b border-b-gray-500 relative mb-4">
-                <h2 className="text-sm uppercase font-bold tracking-wider dark:text-white">
-                    Watch List
-                </h2>
-
-                <span className="w-16 h-1 bg-red-600 inline-block absolute left-0 -bottom-[1.5px] z-10" />
-            </div>
-            <div className="flex space-x-4 overflow-scroll px-5 lg:px-10 py-5 scrollbar-hide">
-                {data?.watchList?.map((movie) => (
-                    <MovieCard key={movie?.id} movie={movie} />
-                ))}
-            </div>
-        </section>
+        <Tabs defaultValue='liked' className='w-full'>
+            <TabsList className='grid w-full grid-cols-2'>
+                <TabsTrigger value='liked'>Liked Movies</TabsTrigger>
+                <TabsTrigger value='watchlist'>Watch List</TabsTrigger>
+            </TabsList>
+            <TabsContent value='liked'>
+                <ProfileMovieCollection
+                    title='Liked Movies'
+                    movies={data?.likedMovies}
+                />
+            </TabsContent>
+            <TabsContent value='watchlist'>
+                <ProfileMovieCollection
+                    title='Watch List'
+                    movies={data?.watchList}
+                />
+            </TabsContent>
+        </Tabs>
     );
 };
 
