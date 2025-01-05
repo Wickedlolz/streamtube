@@ -1,16 +1,19 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
+import { Nunito, Open_Sans } from 'next/font/google';
 import './globals.css';
 
-const geistSans = localFont({
-    src: './fonts/GeistVF.woff',
-    variable: '--font-geist-sans',
-    weight: '100 900',
+const openSans = Open_Sans({
+    subsets: ['latin'],
+    variable: '--font-open-sans',
+    display: 'swap',
+    weight: ['400', '700'],
 });
-const geistMono = localFont({
-    src: './fonts/GeistMonoVF.woff',
-    variable: '--font-geist-mono',
-    weight: '100 900',
+
+const nunito = Nunito({
+    subsets: ['latin'],
+    variable: '--font-nunito',
+    display: 'swap',
+    weight: ['400', '700', '900'],
 });
 
 export const metadata: Metadata = {
@@ -25,10 +28,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang='en' suppressHydrationWarning>
             <body
-                cz-shortcut-listen="true"
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                cz-shortcut-listen='true'
+                className={`${openSans.variable} ${nunito.variable} antialiased`}
             >
                 {children}
             </body>
