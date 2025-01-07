@@ -1,5 +1,7 @@
 # 🎬 StreamTube
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7d6eb702-6b82-45f0-9c0e-782aa52ffdca/deploy-status)](https://app.netlify.com/sites/streamtubex/deploys)
+
 Welcome to **StreamTube**, the ultimate platform for all your movie-watching needs! This project provides a seamless and engaging user experience for movie enthusiasts to explore, watch, and interact with their favorite films. Whether you're looking to find a new movie to watch, dive into detailed information about movies and actors, or personalize your viewing experience, **StreamTube** has got you covered.
 
 # 🚀 Features
