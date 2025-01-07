@@ -1,5 +1,5 @@
 import { QueryKey, useInfiniteQuery } from '@tanstack/react-query';
-import { requester } from '@/lib/utils';
+import { requester } from '@/lib/actions';
 import { ISearchResults } from '@/interfaces/movie';
 
 export const useInfiniteScroll = (
@@ -12,7 +12,7 @@ export const useInfiniteScroll = (
             queryKey: [qKey, qValue],
             queryFn: async ({ pageParam = 1 }) => {
                 url.searchParams.set('page', pageParam.toString());
-                return await requester<ISearchResults>(url);
+                return await requester<ISearchResults>(url.toString());
             },
             initialPageParam: 1,
             getNextPageParam: (lastPage, allPages) =>

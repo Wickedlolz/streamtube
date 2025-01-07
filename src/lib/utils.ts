@@ -63,27 +63,3 @@ export const getUrlByTitle = (title: string) => {
             return '';
     }
 };
-
-export async function requester<T>(url: URL) {
-    url.searchParams.set('include_adult', 'false');
-    url.searchParams.set('include_video', 'false');
-    url.searchParams.set('sort_by', 'popularity.desc');
-    url.searchParams.set('language', 'en-US');
-
-    if (!url.searchParams.get('page')) {
-        url.searchParams.set('page', '1');
-    }
-
-    const options = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_READ_ACCESS_TOKEN}`,
-        },
-    };
-
-    const response = await fetch(url.toString(), options);
-    const data = await response.json();
-
-    return data as T;
-}
