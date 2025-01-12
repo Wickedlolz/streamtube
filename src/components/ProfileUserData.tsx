@@ -28,28 +28,30 @@ const ProfileUserData = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <Card className='mb-8'>
-                <CardContent className='flex flex-col md:flex-row items-center gap-6 p-6'>
-                    <Avatar className='w-24 h-24 md:w-32 md:h-32'>
+            <Card className="mb-8">
+                <CardContent className="flex flex-col md:flex-row items-center gap-6 p-6">
+                    <Avatar className="w-24 h-24 md:w-32 md:h-32">
                         <AvatarImage
                             src={user.photoURL!}
-                            className='object-cover'
+                            className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover "
+                            width={96}
+                            height={96}
                             alt={user?.displayName || 'User Photo'}
                         />
-                        <AvatarFallback className='text-2xl'>
+                        <AvatarFallback className="text-2xl">
                             {user?.email?.charAt(0).toLocaleUpperCase()}
                         </AvatarFallback>
                     </Avatar>
-                    <div className='flex flex-col items-center md:items-start gap-4'>
+                    <div className="flex flex-col items-center md:items-start gap-4">
                         {user?.displayName && (
-                            <h2 className='text-2xl font-bold'>
+                            <h2 className="text-2xl font-bold">
                                 {user.displayName}
                             </h2>
                         )}
-                        <p className='text-muted-foreground'>{user?.email}</p>
-                        <div className='flex gap-2'>
+                        <p className="text-muted-foreground">{user?.email}</p>
+                        <div className="flex gap-2">
                             <EditProfile />
-                            <Button variant='outline' onClick={handleLogout}>
+                            <Button variant="outline" onClick={handleLogout}>
                                 Logout
                             </Button>
                         </div>
