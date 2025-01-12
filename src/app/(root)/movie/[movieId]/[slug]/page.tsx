@@ -1,7 +1,11 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { getMovieDetails } from '@/lib/actions';
-import { convertRuntime, setBackgroundStylesWithImage } from '@/lib/utils';
+import {
+    convertRuntime,
+    formatDate,
+    setBackgroundStylesWithImage,
+} from '@/lib/utils';
 import { endpoints } from '@/lib/endpoints';
 import { getImagePath } from '@/lib/getImagePath';
 
@@ -59,7 +63,7 @@ export default async function MoviePage({ params }: { params: Params }) {
 
                             <div className="flex items-center gap-1 text-xs">
                                 <p>
-                                    {data?.release_date} (
+                                    {formatDate(data?.release_date)} (
                                     {data?.origin_country[0]})
                                 </p>
                                 <span>•</span>
