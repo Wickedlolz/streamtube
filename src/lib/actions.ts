@@ -34,7 +34,10 @@ export async function requester<T>(urlString: string) {
         },
     };
 
-    const response = await fetch(url.toString(), options);
+    const response = await fetch(url.toString(), {
+        ...options,
+        cache: 'force-cache',
+    });
     const data = await response.json();
 
     return data as T;
