@@ -13,6 +13,7 @@ import {
 import { IPerson } from '@/interfaces/people';
 
 const baseUrl = process.env.NEXT_PUBLIC_TMDB_BASE_URL;
+const domainUrl = process.env.NEXT_PUBLIC_DOMAIN_URL;
 
 export async function requester<T>(urlString: string) {
     const url = new URL(urlString);
@@ -172,16 +173,13 @@ type IResponseData = {
 };
 
 export const sendEmail = async (emailDto: SendEmailDto) => {
-    const response = await fetch(
-        'https://moviestreamtube.vercel.app/api/send-email',
-        {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(emailDto),
-        }
-    );
+    const response = await fetch(`${domainUrl}/send-email`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailDto),
+    });
 
     if (!response.ok) {
         try {
