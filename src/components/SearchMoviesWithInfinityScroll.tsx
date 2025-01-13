@@ -4,7 +4,7 @@ import { useInfiniteScroll } from '@/hooks/useInfiniteScroll';
 import { endpoints } from '@/lib/endpoints';
 
 import MovieCard from './MovieCard';
-import Spinner from './Spinner';
+import Spinner from './common/Spinner';
 import { Button } from './ui/button';
 
 type SearchMoviesWithInfinityScrollProps = {

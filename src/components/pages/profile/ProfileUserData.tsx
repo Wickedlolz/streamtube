@@ -4,10 +4,10 @@ import { useRouter } from 'next/navigation';
 import { useFirebaseContext } from '@/contexts/FirebaseContext';
 import { motion } from 'framer-motion';
 
-import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar';
-import { Button } from './ui/button';
+import { Avatar, AvatarFallback, AvatarImage } from '../../ui/avatar';
+import { Button } from '../../ui/button';
 import EditProfile from './EditProfile';
-import { Card, CardContent } from './ui/card';
+import { Card, CardContent } from '../../ui/card';
 
 const ProfileUserData = () => {
     const navigate = useRouter();
@@ -33,7 +33,7 @@ const ProfileUserData = () => {
                     <Avatar className="w-24 h-24 md:w-32 md:h-32">
                         <AvatarImage
                             src={user.photoURL!}
-                            className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover "
+                            className="object-cover "
                             width={96}
                             height={96}
                             alt={user?.displayName || 'User Photo'}

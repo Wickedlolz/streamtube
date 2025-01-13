@@ -6,11 +6,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useFirebaseContext } from '@/contexts/FirebaseContext';
 
-import GenreDropDown from './GenreDropDown';
-import SearchInput from './SearchInput';
+import GenreDropDown from '../GenreDropDown';
+import SearchInput from '../forms/SearchInput';
 import ThemeToggler from './ThemeToggler';
-import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
-import { Button } from './ui/button';
+import { Avatar, AvatarImage, AvatarFallback } from '../ui/avatar';
+import { Button } from '../ui/button';
 import { SearchIcon } from 'lucide-react';
 
 const Header = () => {

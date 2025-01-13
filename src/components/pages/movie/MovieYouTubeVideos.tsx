@@ -7,7 +7,7 @@ type IVideoPlayerProps = {
     videos: IVideoProps[];
 };
 
-const YouTubeVideos = ({ videos }: IVideoPlayerProps) => {
+const MovieYouTubeVideos = ({ videos }: IVideoPlayerProps) => {
     const onPlayerReady: YouTubeProps['onReady'] = (event) => {
         event.target.pauseVideo();
     };
@@ -47,4 +47,4 @@ const YouTubeVideos = ({ videos }: IVideoPlayerProps) => {
     );
 };
 
-export default YouTubeVideos;
+export default MovieYouTubeVideos;

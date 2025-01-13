@@ -32,7 +32,7 @@ export default async function PlayerPage({ params }: { params: Params }) {
 
             <div className="flex flex-col lg:flex-row w-full h-full">
                 {/* Player Section */}
-                <div className="w-full lg:w-[65%] h-[40vh] lg:h-full">
+                <section className="w-full lg:w-[65%] h-[40vh] lg:h-full">
                     <iframe
                         allowFullScreen
                         className="w-full h-full"
@@ -40,10 +40,10 @@ export default async function PlayerPage({ params }: { params: Params }) {
                         loading="lazy"
                         title={`Watch ${movie.title}`}
                     ></iframe>
-                </div>
+                </section>
 
                 {/* Movie Info Section */}
-                <div className="w-full lg:w-[35%] p-6 space-y-6 overflow-y-auto max-h-[60vh] lg:max-h-dvh">
+                <article className="w-full lg:w-[35%] p-6 space-y-6 overflow-y-auto max-h-[60vh] lg:max-h-dvh">
                     <div className="relative w-full aspect-[2/3] max-w-[300px] mx-auto">
                         <Image
                             src={getImagePath(movie.poster_path)}
@@ -104,7 +104,7 @@ export default async function PlayerPage({ params }: { params: Params }) {
                             </div>
                         )}
                     </div>
-                </div>
+                </article>
             </div>
         </section>
     );

@@ -10,10 +10,10 @@ import { endpoints } from '@/lib/endpoints';
 import { getImagePath } from '@/lib/getImagePath';
 
 import MovieContainer from '@/components/MovieContainer';
-import GenresList from '@/components/GenresList';
-import MovieActionButtons from '@/components/MovieActionButtons';
-import Casts from '@/components/Casts';
-import YoutubeVideos from '@/components/YouTubeVideos';
+import GenresList from '@/components/pages/movie/GenresList';
+import MovieActionButtons from '@/components/pages/movie/MovieActionButtons';
+import Casts from '@/components/pages/movie/Casts';
+import MovieYouTubeVideos from '@/components/pages/movie/MovieYouTubeVideos';
 import MovieOverview from '@/components/MovieOverview';
 
 type Params = Promise<{ movieId: string; slug: string }>;
@@ -83,7 +83,7 @@ export default async function MoviePage({ params }: { params: Params }) {
                     </article>
                 </section>
                 <section className="px-10 mt-4">
-                    <YoutubeVideos videos={data!.videos!.results} />
+                    <MovieYouTubeVideos videos={data!.videos!.results} />
                 </section>
             </section>
             <section className="pt-6 dark:bg-black">
