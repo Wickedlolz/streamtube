@@ -76,7 +76,7 @@ const MovieContainer = ({
                 {showBtn && (
                     <Link
                         href={`/viewmore?title=${title}`}
-                        className='bg-gray-800 text-xs text-white uppercase px-4 py-2 rounded-md border-indigo-600 font-semibold hover:bg-black duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-600'
+                        className='bg-gray-800 text-xs text-white uppercase px-4 py-2 rounded-md border-indigo-600 font-semibold hover:bg-black duration-300 focus:outline-hidden focus:ring-2 focus:ring-indigo-600'
                     >
                         View more
                     </Link>

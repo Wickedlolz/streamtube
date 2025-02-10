@@ -21,7 +21,7 @@ const SearchMoviesWithInfinityScroll = ({
 
     if (isLoading) {
         return (
-            <section className="py-10 max-w-screen-xl mx-auto">
+            <section className="py-10 max-w-(--breakpoint-xl) mx-auto">
                 <Spinner />
             </section>
         );

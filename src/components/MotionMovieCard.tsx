@@ -29,7 +29,7 @@ const MotionMovieCard: React.FC<MovieCardProps> = ({ movie }) => {
                         width={500}
                         height={300}
                     />
-                    <div className='absolute inset-0 bg-gradient-to-t from-black to-transparent md:opacity-0 md:hover:opacity-100 transition-opacity duration-300'>
+                    <div className='absolute inset-0 bg-linear-to-t from-black to-transparent md:opacity-0 md:hover:opacity-100 transition-opacity duration-300'>
                         <div className='absolute bottom-0 left-0 right-0 p-4'>
                             <h3 className='text-white font-bold text-lg mb-2 line-clamp-2'>
                                 {movie.title}

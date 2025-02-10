@@ -28,7 +28,7 @@ export default async function GenrePage({
     const genre = (await searchParams)['genre'];
 
     return (
-        <section className="py-10 max-w-screen-xl mx-auto">
+        <section className="py-10 max-w-(--breakpoint-xl) mx-auto">
             <h2 className="text-4xl font-bold px-10 mb-5 dark:text-white">
                 Results for {genre}
             </h2>

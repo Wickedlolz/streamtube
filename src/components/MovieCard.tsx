@@ -13,10 +13,10 @@ const MovieCard = ({ movie }: MovieCardProps) => {
             href={`/movie/${movie?.id}/${encodeURIComponent(
                 movie.title.toLocaleLowerCase().split(' ').join('-')
             )}`}
-            className='relative flex-shrink-0 cursor-pointer transform transition-transform duration-300 ease-out hover:scale-105 hover:shadow-xl hover:shadow-gray-900/50'
+            className='relative shrink-0 cursor-pointer transform transition-transform duration-300 ease-out hover:scale-105 hover:shadow-xl hover:shadow-gray-900/50'
             aria-label={`View details for ${movie.title}`}
         >
-            <div className='absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80 z-10' />
+            <div className='absolute inset-0 bg-linear-to-b from-transparent via-black/40 to-black/80 z-10' />
 
             <p className='absolute z-20 bottom-5 left-5 text-white text-sm lg:text-base font-medium line-clamp-1'>
                 {movie?.title}

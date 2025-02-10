@@ -73,7 +73,7 @@ const HeroCarousel = () => {
                             )}`}
                             className="flex-full min-w-0"
                         >
-                            <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-gray-900/90 via-transparent to-transparent group-hover:from-black/70 group-hover:to-transparent transition-colors duration-300 ease-in-out"></div>
+                            <div className="absolute top-0 left-0 h-full w-full bg-linear-to-r from-gray-900/90 via-transparent to-transparent group-hover:from-black/70 group-hover:to-transparent transition-colors duration-300 ease-in-out"></div>
                             <Image
                                 src={getImagePath(movie?.backdrop_path, true)}
                                 alt={movie.title || movie.original_title}
@@ -82,7 +82,7 @@ const HeroCarousel = () => {
                                 loading="lazy"
                                 className="w-full h-[400px] lg:h-[550px] object-cover"
                             />
-                            <div className="inline absolute top-0 pt-40 xl:pt-[14rem] left-0 bg-transparent z-20 h-full w-full bg-gradient-to-r from-gray-900/90 via-transparent to-transparent p-20 space-y-5 text-white">
+                            <div className="inline absolute top-0 pt-40 xl:pt-[14rem] left-0 bg-transparent z-20 h-full w-full bg-linear-to-r from-gray-900/90 via-transparent to-transparent p-20 space-y-5 text-white">
                                 <h2 className="text-xl md:text-5xl font-bold max-w-xl">
                                     {movie?.title}
                                 </h2>

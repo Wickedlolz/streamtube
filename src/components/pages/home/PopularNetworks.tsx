@@ -54,8 +54,8 @@ const PopularNetworks = () => {
   const networkProviders = data?.results.slice(0, 40);
 
   return (
-    <section className="bg-gradient h-44 w-full py-2 rounded-sm flex">
-      <div className="h-full flex flex-col justify-center w-32 pl-2 flex-shrink-0 z-10">
+    <section className="bg-gradient h-44 w-full py-2 rounded-xs flex">
+      <div className="h-full flex flex-col justify-center w-32 pl-2 shrink-0 z-10">
         <p className="text-red-200 tracking-widest drop-shadow-xl font-bold">
           Popular
         </p>
@@ -63,7 +63,7 @@ const PopularNetworks = () => {
           NETWORKS
         </p>
       </div>
-      <div className="relative text-white overflow-hidden flex-grow">
+      <div className="relative text-white overflow-hidden grow">
         <div className="flex space-x-4 overflow-x-scroll px-5 lg:px-10 py-5 scrollbar-hide h-full">
           {networkProviders?.map((provider) => (
             <article
@@ -71,7 +71,7 @@ const PopularNetworks = () => {
               onClick={() =>
                 handleNetworkClick(provider.provider_id, provider.provider_name)
               }
-              className="relative flex-shrink-0 cursor-pointer transform hover:scale-105 transition duration-200 ease-out hover:drop-shadow-lg"
+              className="relative shrink-0 cursor-pointer transform hover:scale-105 transition duration-200 ease-out hover:drop-shadow-lg"
               aria-label={`View provider ${provider.provider_name}`}
             >
               <Image

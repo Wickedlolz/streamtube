@@ -44,7 +44,7 @@ export default async function PlayerPage({ params }: { params: Params }) {
 
                 {/* Movie Info Section */}
                 <article className="w-full lg:w-[35%] p-6 space-y-6 overflow-y-auto max-h-[60vh] lg:max-h-dvh">
-                    <div className="relative w-full aspect-[2/3] max-w-[300px] mx-auto">
+                    <div className="relative w-full aspect-2/3 max-w-[300px] mx-auto">
                         <Image
                             src={getImagePath(movie.poster_path)}
                             alt={movie.title}

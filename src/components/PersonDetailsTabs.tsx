@@ -35,7 +35,7 @@ const PersonDetailsTabs = ({ data }: PersonTabbedSectionsType) => {
                                     alt={movie.title}
                                     width={50}
                                     height={75}
-                                    className="object-cover rounded mr-4"
+                                    className="object-cover rounded-sm mr-4"
                                     loading="lazy"
                                 />
                                 <div>

@@ -49,6 +49,7 @@ const MovieActionButtons = ({ movie }: MovieActionButtonsProps) => {
                 variant="secondary"
                 onClick={handleWatchMovie}
                 disabled={!isReleased}
+                className="cursor-pointer"
             >
                 <Play className={isReleased ? 'animate-pulse' : ''} />
             </Button>

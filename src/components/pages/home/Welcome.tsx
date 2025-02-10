@@ -1,6 +1,6 @@
 const Welcome = () => {
     return (
-        <section className='p-8 bg-gradient-to-r from-red-600 to-gray-900 shadow-xl text-white'>
+        <section className='p-8 bg-linear-to-r from-red-600 to-gray-900 shadow-xl text-white'>
             <h1 className='text-3xl font-extrabold mb-6'>
                 Welcome to StreamTube
             </h1>

@@ -90,7 +90,7 @@ const Header = () => {
                         value={searchQuery}
                         onChange={handleSearchChange}
                         placeholder="Search..."
-                        className="w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-black border-gray-300 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:focus:ring-gray-500"
+                        className="w-full px-4 py-2 rounded-md border focus:outline-hidden focus:ring-2 focus:ring-blue-500 bg-white text-black border-gray-300 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:focus:ring-gray-500"
                     />
                 </form>
             )}
