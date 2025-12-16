@@ -33,11 +33,15 @@ export async function requester<T>(urlString: string) {
       accept: "application/json",
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_READ_ACCESS_TOKEN}`,
     },
+    next: { revalidate: 3600 }, // Cache for 1 hour
   };
 
-  const response = await fetch(url.toString(), {
-    ...options,
-  });
+  const response = await fetch(url.toString(), options);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch data: ${response.statusText}`);
+  }
+
   const data = await response.json();
 
   return data as T;
@@ -154,8 +158,8 @@ export const loadGenres = async () => {
 export const getUserCollections = async (userEmail: string) => {
   const user = await getDoc(doc(db, "users", userEmail));
 
-  const likedMovies: IMovieDetails[] = user.data()?.liked;
-  const watchList: IMovieDetails[] = user.data()?.watchList;
+  const likedMovies: IMovieDetails[] = user.data()?.liked || [];
+  const watchList: IMovieDetails[] = user.data()?.watchList || [];
 
   return { likedMovies, watchList };
 };
@@ -172,7 +176,7 @@ type IResponseData = {
 };
 
 export const sendEmail = async (emailDto: SendEmailDto) => {
-  const response = await fetch(`${domainUrl}/send-email`, {
+  const response = await fetch(`${domainUrl}/api/send-email`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

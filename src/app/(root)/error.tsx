@@ -1,12 +1,11 @@
 "use client";
 
-import { Metadata } from "next";
+interface ErrorPageProps {
+  error: Error & { digest?: string };
+  reset: () => void;
+}
 
-export const metadata: Metadata = {
-  title: "Server error | StreamTube",
-};
-
-const ErrorPage = () => {
+const ErrorPage = ({ error, reset }: ErrorPageProps) => {
   return (
     <section className="flex h-[calc(100vh-80px)] items-center justify-center p-5 w-full bg-white">
       <div className="text-center">
@@ -32,8 +31,22 @@ const ErrorPage = () => {
         </h1>
         <p className="text-slate-600 mt-5 lg:text-lg">
           Oops something went wrong. Try to refresh this page or <br /> feel
-          free to contact us if the problem presists.
+          free to contact us if the problem persists.
         </p>
+        <div className="mt-8 flex gap-4 justify-center">
+          <button
+            onClick={reset}
+            className="px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors"
+          >
+            Try again
+          </button>
+          <a
+            href="/"
+            className="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors"
+          >
+            Go home
+          </a>
+        </div>
       </div>
     </section>
   );

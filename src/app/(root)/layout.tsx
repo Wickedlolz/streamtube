@@ -1,33 +1,29 @@
-'use client';
+"use client";
 
-import { QueryClientProvider } from '@tanstack/react-query';
-import client from '@/lib/queryClient';
-import { FirebaseProvider } from '@/contexts/FirebaseContext';
-import { ThemeProvider } from 'next-themes';
+import { QueryClientProvider } from "@tanstack/react-query";
+import client from "@/lib/queryClient";
+import { FirebaseProvider } from "@/contexts/FirebaseContext";
+import { ThemeProvider } from "next-themes";
 
-import Header from '@/components/common/Header';
-import Footer from '@/components/common/Footer';
-import { Toaster } from 'sonner';
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
+import { Toaster } from "sonner";
 
 export default function Layout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem={true}
-        >
-            <QueryClientProvider client={client}>
-                <FirebaseProvider>
-                    <Header />
-                    <main className="dark:bg-black">{children}</main>
-                    <Toaster />
-                    <Footer />
-                </FirebaseProvider>
-            </QueryClientProvider>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
+      <QueryClientProvider client={client}>
+        <FirebaseProvider>
+          <Header />
+          <main className="dark:bg-black">{children}</main>
+          <Toaster />
+          <Footer />
+        </FirebaseProvider>
+      </QueryClientProvider>
+    </ThemeProvider>
+  );
 }
